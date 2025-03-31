@@ -94,7 +94,7 @@ bool Renderer::InitShaders()
 
 bool Renderer::InitObjects()
 {								
-	Matrix4x4 Projection_Matrix = Math::ProjectionMatrix(1.77777, 60.0f * (PI / 180.0f), 0.1f, 20.0f); // Aspect ratio, FOV, Znear, ZFar
+	Matrix4x4 Projection_Matrix = Math::ProjectionMatrix(this->Aspect_Ratio, 60.0f * (PI / 180.0f), 0.1f, 20.0f); // Aspect ratio, FOV, Znear, ZFar
 	Vector3 CamPos(0.0f, 0.0f, 20.0f);
 	Matrix4x4 View_Matrix = Math::ViewMatrix(CamPos, Vector3(0.0f, 0.0f, 0.0f));
 	this->VP = Projection_Matrix * View_Matrix;
